@@ -1,23 +1,27 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import Navbar from '../components/Navbar.astro';
+import '../styles/global.css';
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!doctype html>
+<html lang="nl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jouw Bijlesje – Together All the Way to Success</title>
+    <meta name="description" content="Jouw Bijlesje biedt professionele bijles voor alle niveaus. Neem vandaag nog contact op!" />
+  </head>
+  <body class="bg-white text-slate-800 antialiased">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <footer class="bg-slate-800 text-slate-400 py-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm">&copy; {new Date().getFullYear()} Jouw Bijlesje. Alle rechten voorbehouden.</p>
+      </div>
+    </footer>
+  </body>
+</html>

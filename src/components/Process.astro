@@ -1,0 +1,66 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Proefles',
+    description:
+      'We starten altijd met een gratis proefles om naar de behoeftes van uw kind te kijken.',
+  },
+  {
+    number: '02',
+    title: 'Ons advies',
+    description:
+      'We geven daarna ons advies en overleggen de beste mogelijkheden voor uw kind met u. We maken meteen een duidelijke planning zodat alles helder is.',
+  },
+  {
+    number: '03',
+    title: 'Bijles',
+    description:
+      'We starten de bijles met 10 min herhalen van de eerder behandelde leerstof. Daarna wordt de nieuwe leerstof uitgebreid behandeld en geoefend. We ronden met een klein gesprek met u af. Het doel van dit gesprek is dat u op de hoogte van de voortgang van uw kind blijft. We staan uiteraard open voor feedback.',
+  },
+  {
+    number: '04',
+    title: 'Opvolgen',
+    description:
+      'We blijven uw kind en zijn resultaten regelmatig opvolgen. We geven extra huiswerk en we helpen met het plannen. We staan ook open om kleine vragen via de telefoon te beantwoorden en uit te leggen.',
+  },
+];
+---
+
+<section id="over" class="py-24 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">Onze aanpak</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-800 mt-2 mb-4">Over Jouw Bijlesje</h2>
+      <p class="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
+        Onze aanpak is eenvoudig, persoonlijk en resultaatgericht. Zo zorgen we dat elk kind
+        het maximale uit zichzelf haalt.
+      </p>
+    </div>
+
+    <!-- Steps grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {steps.map((step, i) => (
+        <div class="group bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md hover:border-blue-100 transition-all duration-200 flex gap-6">
+
+          <!-- Step number badge -->
+          <div class="flex-shrink-0">
+            <div class="w-14 h-14 bg-blue-600 group-hover:bg-blue-700 text-white rounded-2xl flex items-center justify-center text-lg font-extrabold transition-colors duration-200 shadow-md shadow-blue-200">
+              {step.number}
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="min-w-0">
+            <h3 class="text-lg font-bold text-slate-800 mb-2">{step.title}</h3>
+            <p class="text-slate-500 leading-relaxed text-sm">{step.description}</p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

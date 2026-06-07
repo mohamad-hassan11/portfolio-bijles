@@ -1,0 +1,89 @@
+---
+interface PricingTier {
+  name: string;
+  price: string | null;
+  highlight?: boolean;
+}
+
+const tiers: PricingTier[] = [
+  { name: 'Middelbare school onderbouw', price: '€30,00' },
+  { name: 'Havo 4 & VWO 4 & VWO 5', price: '€45,00' },
+  { name: 'Examenjaar', price: '€60,00' },
+  { name: 'HBO & UNI', price: '€75,00' },
+  { name: 'Selectie Geneeskunde', price: null, highlight: true },
+];
+---
+
+<section id="tarieven" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">Prijsoverzicht</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-800 mt-2 mb-4">Tarieven</h2>
+      <p class="text-slate-500 text-lg">Transparante en eerlijke prijzen voor kwalitatieve bijles.</p>
+    </div>
+
+    <!-- Pricing cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-center">
+      {tiers.map((tier) => (
+        <div
+          class:list={[
+            'rounded-2xl p-8 flex flex-col items-center text-center border transition-all duration-200',
+            tier.highlight
+              ? 'bg-blue-600 border-blue-600 shadow-2xl shadow-blue-200 scale-105 lg:col-span-1'
+              : 'bg-white border-slate-200 shadow-sm hover:shadow-md hover:border-blue-100',
+          ]}
+        >
+          <!-- Name -->
+          <h3
+            class:list={[
+              'text-base font-bold mb-6 leading-snug',
+              tier.highlight ? 'text-white' : 'text-slate-700',
+            ]}
+          >
+            {tier.name}
+          </h3>
+
+          <!-- Price or CTA -->
+          {tier.price ? (
+            <div class="mt-auto">
+              <span
+                class:list={[
+                  'text-4xl font-extrabold',
+                  tier.highlight ? 'text-white' : 'text-blue-600',
+                ]}
+              >
+                {tier.price}
+              </span>
+              <span
+                class:list={[
+                  'block text-sm mt-1.5',
+                  tier.highlight ? 'text-blue-200' : 'text-slate-400',
+                ]}
+              >
+                per les *
+              </span>
+            </div>
+          ) : (
+            <div class="mt-auto w-full">
+              <p class="text-blue-100 text-sm mb-4 leading-relaxed">
+                Prijs op aanvraag
+              </p>
+              <a
+                href="#contact"
+                class="inline-block w-full bg-white text-blue-600 font-bold px-6 py-3 rounded-xl text-sm hover:bg-blue-50 transition-colors shadow-md"
+              >
+                Neem Contact met ons op!
+              </a>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="text-center text-slate-400 text-sm mt-10">* Een les is 60 min.</p>
+
+  </div>
+</section>

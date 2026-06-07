@@ -1,0 +1,121 @@
+---
+---
+
+<section id="contact" class="py-24 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">Bereik ons</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-800 mt-2 mb-4">Contact</h2>
+      <p class="text-slate-500 text-lg">Bijles nodig?</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Left: contact info -->
+      <div>
+        <h3 class="text-2xl font-bold text-slate-800 mb-4">Neem contact op</h3>
+        <p class="text-slate-500 leading-relaxed mb-8">
+          Neem dan nu contact met ons op door een mail te sturen naar{' '}
+          <a
+            href="mailto:info@jouwbijlesje.nl"
+            class="text-blue-600 font-semibold hover:underline"
+          >
+            info@jouwbijlesje.nl
+          </a>. We nemen op dezelfde dag contact met u op.
+        </p>
+
+        <!-- Info cards -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-slate-100">
+            <div class="w-11 h-11 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-0.5">E-mail</p>
+              <a
+                href="mailto:info@jouwbijlesje.nl"
+                class="text-slate-700 font-semibold text-sm hover:text-blue-600 transition-colors"
+              >
+                info@jouwbijlesje.nl
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-slate-100">
+            <div class="w-11 h-11 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-0.5">Reactietijd</p>
+              <p class="text-slate-700 font-semibold text-sm">Zelfde dag</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: contact form -->
+      <form
+        class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 space-y-5"
+        novalidate
+      >
+        <div>
+          <label for="contact-name" class="block text-sm font-semibold text-slate-700 mb-1.5">
+            Naam
+          </label>
+          <input
+            id="contact-name"
+            type="text"
+            name="name"
+            required
+            autocomplete="name"
+            placeholder="Uw naam"
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm"
+          />
+        </div>
+
+        <div>
+          <label for="contact-email" class="block text-sm font-semibold text-slate-700 mb-1.5">
+            E-mailadres
+          </label>
+          <input
+            id="contact-email"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="uw@email.nl"
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm"
+          />
+        </div>
+
+        <div>
+          <label for="contact-message" class="block text-sm font-semibold text-slate-700 mb-1.5">
+            Bericht
+          </label>
+          <textarea
+            id="contact-message"
+            name="message"
+            required
+            rows="5"
+            placeholder="Vertel ons meer over uw bijlesvraag..."
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none text-sm"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white font-bold py-3.5 px-6 rounded-xl hover:bg-blue-700 active:bg-blue-800 transition-colors duration-200 shadow-md hover:shadow-lg text-sm"
+        >
+          Verstuur Bericht
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
