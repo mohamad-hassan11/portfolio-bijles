@@ -3,62 +3,77 @@ const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Over jouw bijlesje', href: '#over' },
   { label: 'Tarieven', href: '#tarieven' },
-  { label: 'Contact', href: '#contact' },
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+<!-- Floating glassmorphic navbar -->
+<header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
+
+  <!-- Main bar -->
+  <div class="bg-white/70 backdrop-blur-md border border-white/80 rounded-2xl shadow-lg shadow-slate-200/60 px-5 py-3">
+    <div class="flex items-center justify-between">
 
       <!-- Logo -->
-      <a href="#home" class="text-xl font-extrabold text-blue-600 hover:text-blue-700 transition-colors tracking-tight">
+      <a
+        href="#home"
+        class="text-lg font-extrabold bg-gradient-to-r from-blue-600 to-violet-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity tracking-tight select-none"
+      >
         Jouw Bijlesje
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="hidden md:flex items-center gap-1">
         {navLinks.map(link => (
           <a
             href={link.href}
-            class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm"
+            class="text-slate-600 hover:text-blue-600 hover:bg-blue-50 font-medium transition-all duration-200 text-sm px-4 py-2 rounded-xl"
           >
             {link.label}
           </a>
         ))}
+        <a
+          href="#contact"
+          class="ml-3 bg-blue-600 text-white font-semibold px-5 py-2 rounded-xl text-sm shadow-md shadow-blue-200 hover:bg-blue-700 hover:shadow-blue-300 hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Contact
+        </a>
       </nav>
 
-      <!-- Mobile Menu Button -->
+      <!-- Mobile hamburger -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-slate-100 transition-colors"
+        class="md:hidden p-2 rounded-xl text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-colors"
         aria-label="Open menu"
         aria-expanded="false"
       >
-        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pb-4">
-    <nav class="flex flex-col gap-1 pt-2">
-      {navLinks.map(link => (
+  <!-- Mobile dropdown (same glass style) -->
+  <div
+    id="mobile-menu"
+    class="hidden mt-2 bg-white/80 backdrop-blur-md border border-white/80 rounded-2xl shadow-lg shadow-slate-200/60 px-4 py-3"
+  >
+    <nav class="flex flex-col gap-1">
+      {[...navLinks, { label: 'Contact', href: '#contact' }].map(link => (
         <a
           href={link.href}
-          class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium transition-colors text-sm"
+          class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-600 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors text-sm"
         >
           {link.label}
         </a>
       ))}
     </nav>
   </div>
+
 </header>
 
 <script>
@@ -75,7 +90,6 @@ const navLinks = [
     btn.setAttribute('aria-expanded', String(!isOpen));
   });
 
-  // Close mobile menu on link click
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', () => {
       menu?.classList.add('hidden');
@@ -85,3 +99,4 @@ const navLinks = [
     });
   });
 </script>
+

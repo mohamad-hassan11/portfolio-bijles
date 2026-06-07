@@ -10,17 +10,39 @@ import '../styles/global.css';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <!-- Friendly, modern typeface -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <title>Jouw Bijlesje – Together All the Way to Success</title>
     <meta name="description" content="Jouw Bijlesje biedt professionele bijles voor alle niveaus. Neem vandaag nog contact op!" />
+    <style>
+      body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    </style>
   </head>
-  <body class="bg-white text-slate-800 antialiased">
+  <body class="bg-slate-50 text-slate-800 antialiased">
     <Navbar />
     <main>
       <slot />
     </main>
-    <footer class="bg-slate-800 text-slate-400 py-8">
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 pt-14 pb-10">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-sm">&copy; {new Date().getFullYear()} Jouw Bijlesje. Alle rechten voorbehouden.</p>
+        <p class="text-2xl font-extrabold text-white tracking-tight mb-1">
+          Jouw Bijlesje
+        </p>
+        <p class="text-sm text-slate-400 mb-8">Together All the Way to Success</p>
+        <div class="flex justify-center gap-6 mb-8 text-sm">
+          <a href="#home" class="hover:text-white transition-colors">Home</a>
+          <a href="#over" class="hover:text-white transition-colors">Over ons</a>
+          <a href="#tarieven" class="hover:text-white transition-colors">Tarieven</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <div class="h-px bg-slate-800 max-w-sm mx-auto mb-8"></div>
+        <p class="text-xs text-slate-600">
+          &copy; {new Date().getFullYear()} Jouw Bijlesje. Alle rechten voorbehouden.
+        </p>
       </div>
     </footer>
   </body>
