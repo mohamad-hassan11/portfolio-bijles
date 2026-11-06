@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-11-06T19:03:32.810Z",
         "reason": "Existing Google Fonts import preserved during the requested light and dark theme refinement."
+      },
+      {
+        "rule": "gray-on-color",
+        "value": "*",
+        "files": [
+          "src/components/Navbar.astro"
+        ],
+        "createdAt": "2026-11-06T19:11:12.171Z",
+        "reason": "Existing slate navigation text on neutral slate and white surfaces, with blue hover states, preserved to match the supplied navbar reference; this task changes desktop and tablet order only."
       }
     ]
   }
