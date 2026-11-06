@@ -27,14 +27,14 @@ const steps = [
 ];
 ---
 
-<section id="over" class="py-24 bg-slate-50">
+<section id="over" class="py-24 bg-slate-50 dark:bg-slate-950">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Section header -->
     <div class="text-center mb-16">
-      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">Onze aanpak</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-800 mt-2 mb-4">Over Jouw Bijlesje</h2>
-      <p class="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
+      <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-widest">Onze aanpak</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-800 dark:text-slate-100 mt-2 mb-4">Over Jouw Bijlesje</h2>
+      <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
         Onze aanpak is eenvoudig, persoonlijk en resultaatgericht. Zo zorgen we dat elk kind
         het maximale uit zichzelf haalt.
       </p>
@@ -43,19 +43,19 @@ const steps = [
     <!-- Steps grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {steps.map((step, i) => (
-        <div class="group bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md hover:border-blue-100 transition-all duration-200 flex gap-6">
+        <div class="group bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-blue-100 dark:hover:border-blue-800 transition-all duration-200 flex gap-6">
 
           <!-- Step number badge -->
           <div class="flex-shrink-0">
-            <div class="w-14 h-14 bg-blue-600 group-hover:bg-blue-700 text-white rounded-2xl flex items-center justify-center text-lg font-extrabold transition-colors duration-200 shadow-md shadow-blue-200">
+            <div class="w-14 h-14 bg-blue-600 group-hover:bg-blue-700 text-white rounded-2xl flex items-center justify-center text-lg font-extrabold transition-colors duration-200 shadow-md shadow-blue-200 dark:shadow-black/20">
               {step.number}
             </div>
           </div>
 
           <!-- Content -->
           <div class="min-w-0">
-            <h3 class="text-lg font-bold text-slate-800 mb-2">{step.title}</h3>
-            <p class="text-slate-500 leading-relaxed text-sm">{step.description}</p>
+            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">{step.title}</h3>
+            <p class="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">{step.description}</p>
           </div>
 
         </div>

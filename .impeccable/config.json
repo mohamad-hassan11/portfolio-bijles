@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          "src/layouts/Layout.astro"
+        ],
+        "createdAt": "2026-11-06T19:03:32.810Z",
+        "reason": "Existing Google Fonts import preserved during the requested light and dark theme refinement."
+      }
+    ]
+  }
+}

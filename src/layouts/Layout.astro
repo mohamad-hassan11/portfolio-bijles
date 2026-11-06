@@ -8,6 +8,14 @@ import '../styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      (() => {
+        let theme;
+        try { theme = localStorage.getItem('jouwbijlesje-theme'); } catch {}
+        document.documentElement.dataset.theme = theme === 'light' || theme === 'dark'
+          ? theme : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <!-- Friendly, modern typeface -->
@@ -20,7 +28,7 @@ import '../styles/global.css';
       body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
     </style>
   </head>
-  <body class="bg-slate-50 text-slate-800 antialiased">
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased">
     <Navbar />
     <main>
       <slot />

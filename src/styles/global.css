@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+::selection { background: #bfdbfe; color: #172554; }
+:root[data-theme="dark"] ::selection { background: #1e40af; color: #eff6ff; }
+:focus-visible { outline: 2px solid #3b82f6; outline-offset: 4px; }
+input, textarea { background-color: transparent; }
+[data-theme="light"] .theme-sun,
+[data-theme="dark"] .theme-moon { display: none; }
