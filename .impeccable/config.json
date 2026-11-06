@@ -20,6 +20,15 @@
         ],
         "createdAt": "2026-11-06T19:11:12.171Z",
         "reason": "Existing slate navigation text on neutral slate and white surfaces, with blue hover states, preserved to match the supplied navbar reference; this task changes desktop and tablet order only."
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/components/Hero.astro"
+        ],
+        "createdAt": "2026-11-06T19:23:48.757Z",
+        "reason": "User explicitly requested Success to match the existing Jouw gradient."
       }
     ]
   }
